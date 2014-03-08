@@ -85,7 +85,7 @@ body {
     width: 36px;
     height: 20px;
     text-shadow: rgb(128, 128, 128) 0px 1px 1px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-align: left;
     line-height: 16px;
     -khtml-margin-top-collapse: separate;
@@ -112,7 +112,7 @@ body {
     width: 36px;
     height: 20px;
     text-shadow: rgb(128, 128, 128) 0px 1px 1px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-align: left;
     line-height: 16px;
     left: 237px;
