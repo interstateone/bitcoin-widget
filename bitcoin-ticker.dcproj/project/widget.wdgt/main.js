@@ -20,7 +20,8 @@ var currencies = {
     gbp: "£",
     eur: "€",
     btc: "฿",
-    jpn: "¥"
+    jpn: "¥",
+    aud: "$"
 }
 
 var sources = {
@@ -41,20 +42,10 @@ var sources = {
                 sell: "https://coinbase.com/api/v1/prices/sell" },
         fetchMethod: getCoinbase
     },
-    mtGoxUsd: {
-        name: "Mt. Gox USD",
-        url: "https://data.mtgox.com/api/2/BTCUSD/money/ticker",
-        fetchMethod: getMtGox
-    },
-    mtGoxCad: {
-        name: "Mt. Gox CAD",
-        url: "https://data.mtgox.com/api/2/BTCCAD/money/ticker",
-        fetchMethod: getMtGox
-    },
-    mtGoxEur: {
-        name: "Mt. Gox EUR",
-        url: "https://data.mtgox.com/api/2/BTCEUR/money/ticker",
-        fetchMethod: getMtGox
+    btcmarketsAUD: {
+        name: "BTC Markets AUD",
+        url: "https://api.btcmarkets.net/market/BTC/AUD/tick",
+        fetchMethod: getBTCMarkets
     }
 };
 
@@ -117,17 +108,14 @@ function getCoinbase(url, callback) {
     });
 }
 
-function getMtGox(url, callback) {
+function getBTCMarkets(url, callback) {
     $.getJSON(url, function(json) {
         callback({
-            last: json.data.last.value,
-            high: json.data.high.value,
-            low: json.data.low.value,
-            buy: json.data.buy.value,
-            sell: json.data.sell.value,
-            volume: json.data.vol.value,
-            currency: json.data.high.currency,
-            timestamp: json.data.now
+            last: json.lastPrice,
+            buy: json.bestBid,
+            sell: json.bestAsk,
+            currency: json.currency,
+            timestamp: json.timestamp
         });
     });
 }
