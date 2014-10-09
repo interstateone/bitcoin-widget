@@ -1,7 +1,7 @@
 bitcoin-widget
 ============
 
-## Note: This project is no longer maintained because Dashboard has been replaced, for all intents and purposes, by [App Extensions](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/index.html).
+### Note: This project is no longer maintained because Dashboard has been replaced, for all intents and purposes, by [App Extensions](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/index.html).
 
 ![](http://cl.ly/image/0n0s110d3D1c/Screenshot%202014-01-29%2020.29.21.png)
 
